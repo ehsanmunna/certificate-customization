@@ -1,0 +1,22 @@
+{
+  "name": "certificate-customization",
+  "version": "1.0.0",
+  "description": "certification r&d",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehsanmunna/certificate-customization.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ehsanmunna/certificate-customization/issues"
+  },
+  "homepage": "https://github.com/ehsanmunna/certificate-customization#readme",
+  "dependencies": {
+    "konva": "^8.3.5"
+  }
+}
