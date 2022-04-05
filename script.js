@@ -52,7 +52,10 @@ var line = new Konva.Line({
 });
 
 const layer = new Konva.Layer();
+const lineLayer = new Konva.Layer();
+const watermarkLayer = new Konva.Layer();
+
 layer.add(simpleText)
 layer.add(line);
 stage.add(layer);
-console.log(line)
+console.log(stage.toJSON())
