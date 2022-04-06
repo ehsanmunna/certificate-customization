@@ -4,10 +4,10 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 const color = '#273746';
 
-const jsonData = {"attrs":{"width":1280,"height":391,"draggable":true},"className":"Stage","children":[{"attrs":{},"className":"Layer","children":[{"attrs":{"x":640,"y":15,"text":"Bangladesh Technical Education Board","fontSize":30,"fontFamily":"Calibri","fill":"#273746","offsetX":232.44873046875},"className":"Text"},{"attrs":{"x":50,"y":341,"points":[0,0,290,0],"stroke":"#273746","tension":1},"className":"Line"}]}]}
+const jsonData = {"attrs":{"width":1280,"height":354,"draggable":true},"className":"Stage","children":[{"attrs":{},"className":"Layer","children":[{"attrs":{"x":640,"y":15,"text":"Bangladesh Technical Education Board","fontSize":30,"fontFamily":"Calibri","fill":"#273746","offsetX":232.44873046875},"className":"Text"}]},{"attrs":{},"className":"Layer","children":[{"attrs":{"x":50,"y":304,"points":[0,0,290,0],"stroke":"#273746","tension":1},"className":"Line"}]},{"attrs":{},"className":"Layer","children":[{"attrs":{"x":50,"y":174,"width":106,"height":118,"src":"./assets/signature/sign-1.png"},"className":"Image"}]}]}
 
 const konva = Konva.Node.create(jsonData, "container")
-const layer = konva.children[0];
+// const layer = konva.children[0];
 // const stage = new Konva.Stage({
 //   container: 'container',
 //   width: width,
@@ -26,20 +26,20 @@ const layer = konva.children[0];
 // simpleText.offsetX(simpleText.width() / 2);
 
 // signature image
-var imageObj = new Image();
-imageObj.onload = function () {
-  var signature1 = new Konva.Image({
-    x: 50,
-    y: height - 180,
-    image: imageObj,
-    width: 106,
-    height: 118,
-  });
+// var imageObj = new Image();
+// imageObj.onload = function () {
+//   var signature1 = new Konva.Image({
+//     x: 50,
+//     y: height - 180,
+//     image: imageObj,
+//     width: 106,
+//     height: 118,
+//   });
 
-  // add the shape to the layer
-  layer.add(signature1);
-};
-imageObj.src = './assets/signature/sign-1.png';
+//   // add the shape to the layer
+//   layer.add(signature1);
+// };
+// imageObj.src = './assets/signature/sign-1.png';
 
 // // footer line
 // const startFromX = 0;

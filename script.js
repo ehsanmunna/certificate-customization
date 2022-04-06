@@ -4,6 +4,14 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 const color = '#273746';
 
+const layer = new Konva.Layer();
+const lineLayer = new Konva.Layer({
+  name: 'line-layer',
+});
+const watermarkLayer = new Konva.Layer({
+  name: 'watermark-layer'
+});
+
 const stage = new Konva.Stage({
   container: 'container',
   width: width,
@@ -29,13 +37,19 @@ imageObj.onload = function () {
     y: height - 180,
     image: imageObj,
     width: 106,
-    height: 118,
+    height: 118
   });
 
   // add the shape to the layer
-  layer.add(signature1);
+  signature1.setAttr('src', './assets/signature/sign-1.png');
+  console.log('image load');
+  watermarkLayer.add(signature1);
+  watermarkLayer.draw();
+  console.log(stage.toJSON())
 };
-imageObj.src = './assets/signature/sign-1.png';
+// imageObj.src = './assets/signature/sign-1.png';
+console.log('image init');
+imageObj.setAttribute('src', './assets/signature/sign-1.png');
 
 // footer line
 const startFromX = 0;
@@ -51,11 +65,12 @@ var line = new Konva.Line({
   tension: 1
 });
 
-const layer = new Konva.Layer();
-const lineLayer = new Konva.Layer();
-const watermarkLayer = new Konva.Layer();
+
 
 layer.add(simpleText)
-layer.add(line);
+lineLayer.add(line);
 stage.add(layer);
-console.log(stage.toJSON())
+stage.add(lineLayer);
+stage.add(watermarkLayer);
+console.log(stage.toObject());
+// console.log(stage.toJSON())
