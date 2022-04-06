@@ -45,7 +45,7 @@ imageObj.onload = function () {
   console.log('image load');
   watermarkLayer.add(signature1);
   watermarkLayer.draw();
-  console.log(stage.toJSON())
+  // console.log(stage.toJSON())
 };
 // imageObj.src = './assets/signature/sign-1.png';
 console.log('image init');
@@ -74,3 +74,8 @@ stage.add(lineLayer);
 stage.add(watermarkLayer);
 console.log(stage.toObject());
 // console.log(stage.toJSON())
+
+var seri = document.getElementById("seri");
+seri.addEventListener('click', ()=>{
+  console.log(stage.toObject());
+})
