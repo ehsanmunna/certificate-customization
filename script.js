@@ -1,5 +1,3 @@
-// const { default: Konva } = require("konva");
-
 const width = window.innerWidth;
 const height = window.innerHeight;
 const color = '#273746';
@@ -45,11 +43,9 @@ imageObj.onload = function () {
   console.log('image load');
   watermarkLayer.add(signature1);
   watermarkLayer.draw();
-  // console.log(stage.toJSON())
 };
-// imageObj.src = './assets/signature/sign-1.png';
+imageObj.src = './assets/signature/sign-1.png';
 console.log('image init');
-imageObj.setAttribute('src', './assets/signature/sign-1.png');
 
 // footer line
 const startFromX = 0;
@@ -72,8 +68,6 @@ lineLayer.add(line);
 stage.add(layer);
 stage.add(lineLayer);
 stage.add(watermarkLayer);
-console.log(stage.toObject());
-// console.log(stage.toJSON())
 
 var seri = document.getElementById("seri");
 seri.addEventListener('click', ()=>{
