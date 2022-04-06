@@ -77,5 +77,7 @@ console.log(stage.toObject());
 
 var seri = document.getElementById("seri");
 seri.addEventListener('click', ()=>{
-  console.log(stage.toObject());
+  const konvadata = stage.toObject();
+  localStorage.setItem('konvadata', JSON.stringify(konvadata))
+  console.log(konvadata);
 })

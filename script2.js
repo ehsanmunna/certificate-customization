@@ -4,9 +4,19 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 const color = '#273746';
 
-const jsonData = {"attrs":{"width":1280,"height":354,"draggable":true},"className":"Stage","children":[{"attrs":{},"className":"Layer","children":[{"attrs":{"x":640,"y":15,"text":"Bangladesh Technical Education Board","fontSize":30,"fontFamily":"Calibri","fill":"#273746","offsetX":232.44873046875},"className":"Text"}]},{"attrs":{},"className":"Layer","children":[{"attrs":{"x":50,"y":304,"points":[0,0,290,0],"stroke":"#273746","tension":1},"className":"Line"}]},{"attrs":{},"className":"Layer","children":[{"attrs":{"x":50,"y":174,"width":106,"height":118,"src":"./assets/signature/sign-1.png"},"className":"Image"}]}]}
-
-const konva = Konva.Node.create(jsonData, "container")
+const jsonData = JSON.parse(localStorage.getItem('konvadata'));
+console.log('get data ',  jsonData);
+const konva = Konva.Node.create(jsonData, "container");
+konva.find('Image').forEach((imageNode) => {
+  // console.log(imageNode)
+  const src = imageNode.getAttr('src');
+  const image = new Image();
+  image.onload = () => {
+      imageNode.image(image);
+      imageNode.getLayer().batchDraw();
+  }
+  image.src = src;
+});
 // const layer = konva.children[0];
 // const stage = new Konva.Stage({
 //   container: 'container',
